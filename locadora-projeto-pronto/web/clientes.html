@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clientes</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Clientes</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="funcionarios.html">Funcionários</a>
+      <a href="carros.html">Carros</a>
+      <a href="alugueis.html">Aluguéis</a>
+    </nav>
+  </header>
+  <main>
+    <form id="formCliente">
+      <input name="nome" placeholder="Nome" required>
+      <input name="idade" type="number" placeholder="Idade">
+      <input name="cnh" placeholder="CNH">
+      <input name="endereco" placeholder="Endereço">
+      <input name="telefone" placeholder="Telefone">
+      <button type="submit">Salvar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Nome</th><th>Idade</th><th>CNH</th><th>Endereço</th><th>Telefone</th><th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tbClientes"></tbody>
+    </table>
+  </main>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/clientes.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carros</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Carros</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="funcionarios.html">Funcionários</a>
+      <a href="alugueis.html">Aluguéis</a>
+    </nav>
+  </header>
+  <main>
+    <form id="formCarro">
+      <input name="nome" placeholder="Nome" required>
+      <input name="modelo" placeholder="Modelo">
+      <input name="marca" placeholder="Marca">
+      <input name="valor_hora" type="number" step="0.01" placeholder="Valor por hora" required>
+      <button type="submit">Salvar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Nome</th><th>Modelo</th><th>Marca</th><th>Valor/h</th><th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tbCarros"></tbody>
+    </table>
+  </main>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/carros.js"></script>
+</body>
+</html>

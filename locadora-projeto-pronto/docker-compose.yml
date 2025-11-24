@@ -1,0 +1,33 @@
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: locadora_db
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/01-database.sql:ro
+
+  server:
+    build: ./server
+    container_name: locadora_server
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASS: example
+      DB_NAME: locadora
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/usr/src/app
+      - ./web:/usr/src/app/web
+    restart: always
+
+volumes:
+  dbdata:

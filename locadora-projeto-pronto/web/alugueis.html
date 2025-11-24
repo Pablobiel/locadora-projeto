@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aluguéis</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Aluguéis</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="funcionarios.html">Funcionários</a>
+      <a href="carros.html">Carros</a>
+    </nav>
+  </header>
+  <main>
+    <form id="formAluguel">
+      <label>Cliente:
+        <select id="selCliente" name="id_cliente" required></select>
+      </label>
+      <label>Funcionário:
+        <select id="selFunc" name="id_funcionario" required></select>
+      </label>
+      <label>Carro:
+        <select id="selCarro" name="id_carro" required></select>
+      </label>
+      <input name="horas" type="number" min="1" placeholder="Horas" required>
+      <button type="submit">Registrar aluguel</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Cliente</th><th>Funcionário</th><th>Carro</th><th>Horas</th><th>Valor total</th><th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tbAlugueis"></tbody>
+    </table>
+  </main>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/alugueis.js"></script>
+</body>
+</html>
